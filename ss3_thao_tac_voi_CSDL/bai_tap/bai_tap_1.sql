@@ -71,5 +71,23 @@ SELECT * FROM Student
 WHERE StudentName REGEXP 'h[a-z]+';
 
 -- Hiển thị các thông tin lớp học có thời gian bắt đầu vào tháng 12.
-SELECT * FROM Student
-WHERE MONTH() 
+SELECT * FROM Class
+WHERE MONTH(StartDate) =12;
+
+-- Hiển thị tất cả các thông tin môn học có credit trong khoảng từ 3-5.
+
+SELECT * FROM Subject
+WHERE Credit  BETWEEN 3 AND 5;
+
+
+-- Thay đổi mã lớp(ClassID) của sinh viên có tên ‘Hung’ là 2.
+UPDATE Student SET ClassId=2
+WHERE  StudentName='Hung';
+
+-- Hiển thị các thông tin: StudentName, SubName, Mark.
+-- Dữ liệu sắp xếp theo điểm thi (mark) giảm dần. nếu trùng sắp theo tên tăng dần.
+SELECT s.StudentName,m.Mark,sub.SubName
+FROM Student s
+JOIN Mark m ON s.StudentName= m.StudentId
+JOIN Subject sub ON m.SubId=sub.SubId
+ORDER BY Mark DESC,StudentName DESC; 
