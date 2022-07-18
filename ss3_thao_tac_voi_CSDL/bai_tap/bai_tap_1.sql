@@ -1,6 +1,6 @@
-drop database if exists ss3_bai_tap_1;
-create database ss3_bai_tap_1;
-use ss3_bai_tap_1;
+drop database if exists QuanLySinhVien;
+create database QuanLySinhVien;
+use QuanLySinhVien;
 
 CREATE TABLE Class
 (
