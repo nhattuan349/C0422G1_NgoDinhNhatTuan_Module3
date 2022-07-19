@@ -35,17 +35,17 @@ from order_ss2 o ;
 
 select c.*,p.*
 from customer c
-join order_ss2 o on c.c_id=o.c_id
-join oder_detail odt on o.o_id=odt.o_id
-join product p on odt.p_id=p.p_id;
+	join order_ss2 o on c.c_id=o.c_id
+	join oder_detail odt on o.o_id=odt.o_id
+	join product p on odt.p_id=p.p_id;
 
 select c.*, count(o.c_id) as so_lan_mua_hang
 from customer c
-left join  order_ss2 o on c.c_id=o.c_id
+	left join  order_ss2 o on c.c_id=o.c_id
 group by c_id  having count(o.c_id)=0;
 
 select o.o_id,o.o_date,sum(od_qty*p_price) as tong_tien
 from order_ss2 o 
-join oder_detail odt on o.o_id=odt.o_id
-join product p on odt.p_id=p.p_id
+	join oder_detail odt on o.o_id=odt.o_id
+	join product p on odt.p_id=p.p_id
 group by o_id;
