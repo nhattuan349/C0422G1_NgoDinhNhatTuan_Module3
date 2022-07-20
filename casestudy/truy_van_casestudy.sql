@@ -114,3 +114,33 @@ left join dich_vu_di_kem dvdk on hdct.ma_dich_vu_di_kem =  dvdk.ma_dich_vu_di_ke
 group by ma_hop_dong
 order by so_luong_dich_vu_di_kem desc;
 
+/*
+11.	Hiển thị thông tin các dịch vụ đi kèm đã được sử dụng 
+bởi những khách hàng có ten_loai_khach là “Diamond” và có dia_chi ở “Vinh” hoặc “Quảng Ngãi”.
+*/
+select dvdk.*,kh.dia_chi,lk.ten_loai_khach
+ from dich_vu_di_kem dvdk 
+ join hop_dong_chi_tiet hdct on dvdk.ma_dich_vu_di_kem = hdct.ma_dich_vu_di_kem
+ join hop_dong hd   on hdct.ma_hop_dong = hd.ma_hop_dong
+ join khach_hang kh on hd.ma_khach_hang = hd.ma_khach_hang
+ join loai_khach lk on kh.ma_loai_khach = lk.ma_loai_khach
+ where lk.ten_loai_khach = 'Diamond' and  (kh.dia_chi  like '%Vinh%' or kh.dia_chi like '%Quãng Ngãi%');
+ 
+ /*
+12.	Hiển thị thông tin
+ ma_hop_dong, ho_ten (nhân viên), ho_ten (khách hàng), so_dien_thoai (khách hàng), ten_dich_vu, so_luong_dich_vu_di_kem 
+(được tính dựa trên việc sum so_luong ở dich_vu_di_kem),tien_dat_coc của tất cả các dịch vụ
+ đã từng được khách hàng đặt vào 3 tháng cuối năm 2020 nhưng chưa từng được khách hàng đặt vào 6 tháng đầu năm 2021.
+*/
+
+ select hd.ma_hop_dong,nv.ho_ten as ho_ten_nhan_vien,kh.ho_ten,kh.so_dien_thoai,dv.ma_dich_vu,dv.ten_dich_vu,
+ sum(ifnull(hdct.so_luong,0)) as so_luong_dich_vu_di_kem,hd.tien_dat_coc
+ from hop_dong hd
+  join nhan_vien nv  on hd.ma_nhan_vien  = nv.ma_nhan_vien
+  join khach_hang kh on hd.ma_khach_hang = kh.ma_khach_hang
+  join dich_vu dv    on hd.ma_dich_vu    = dv.ma_dich_vu
+  join hop_dong_chi_tiet hdct on hd.ma_hop_dong = hdct.ma_hop_dong
+ where (month(ngay_lam_hop_dong) between 7 and 12)  and year(ngay_lam_hop_dong)=2020
+ group by hd.ma_hop_dong;
+ 
+ 
