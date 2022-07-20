@@ -57,6 +57,7 @@ delimiter ;
 -- Tạo store procedure thêm một sản phẩm mới
 delimiter //
 create procedure product_add (
+in id_product int,
 in  product_Code int,
 in product_Name varchar(50),
 in product_Price double,
@@ -71,7 +72,7 @@ delimiter ;
 
 -- Tạo store procedure sửa thông tin sản phẩm theo id
 delimiter //
-create  procedure product_update (
+create procedure product_update (
 in id_product int,
 in product_Code int,
 in product_Name varchar(50),

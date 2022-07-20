@@ -18,9 +18,9 @@ group by Sub.Sub_Id
 having max_Mark >= all (select max(mark) from mark  group by Sub_Id);	 
 
 -- Hiển thị các thông tin sinh viên và điểm trung bình của mỗi sinh viên, xếp hạng theo thứ tự điểm giảm dần
-select S.Student_Id, S.Student_Name, avg(mark)
+select S.Student_Id, S.Student_Name, avg(mark) as diem_trung_binh
 from student S 
 	join mark M on S.Student_Id = M.Student_Id
 group by S.Student_Id,S.Student_Name
-order by mark desc
+order by diem_trung_binh desc
 
