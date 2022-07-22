@@ -34,12 +34,11 @@ where s.student_id not in
 (select ins.student_id
 from instructor_student ins);
  
- 
  -- 7.	Đưa ra mã khoa, tên khoa và số giảng viên của mỗi khoa
  select f.faculty_id, f.faculty_name, count(instructor_id) so_giang_vien
  from faculty f
  join instructor i on f.faculty_id = i.faculty_id
- group by f.faculty_name;
+ group by f.faculty_id;
  
  -- 8.	Cho biết số điện thoại của khoa mà sinh viên có tên ‘Le van son’ đang theo học
  select f.*,s.student_name 
@@ -81,4 +80,7 @@ join instructor_student ins on p.project_id = ins.project_id
 join student s on ins.student_id = s.student_id
 group by ins.project_id
 having so_luong_tham_gia_de_tai >= 3
+
+-- 6.	Đưa ra mã số, họ tên và điểm của các sinh viên khoa ‘DIALY và QLTN’
+select s.student_id, s.student_name, ins.grade
 
