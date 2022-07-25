@@ -1,0 +1,45 @@
+section div p {
+    font-size: 14px;
+    width: 282px;
+    margin-right: 20px;
+    font-family: tahoma;
+}
+section div a {
+    font-size: 14px;
+    width: 282px;
+    margin-right: 20px;
+    font-family: tahoma;
+}
+
+section div img {
+    float: right;
+    width: 282px;
+    margin-right: 20px;
+}
+
+section {
+    width: 604px;
+}
+
+article {
+    width: 282px;
+    height: 177px;
+    margin-right: 20px;
+    margin-bottom: 103px;
+    float: left;
+}
+article img {
+    width: 282px;
+}
+a {
+    font-family: tahoma;
+    font-weight: bold;
+    display: block;
+    font-size: 18px;
+    line-height: 28px;
+    color:#2d2d2d;
+    text-decoration: none;
+}
+a:hover {
+    color: orange;
+}

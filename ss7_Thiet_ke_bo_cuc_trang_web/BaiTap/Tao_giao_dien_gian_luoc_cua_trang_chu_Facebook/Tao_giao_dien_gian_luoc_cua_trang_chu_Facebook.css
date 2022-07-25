@@ -92,7 +92,7 @@
     .col-l-11 {width: 91.66667%;}
     .col-l-12 {width: 100%;}
 }
-
+/*-------------------------*/
 #menu{
     height: 30px;
     padding:0;
@@ -147,7 +147,7 @@
 #menu ul li:hover ul{
     visibility: visible;
 }
-
+/*--------------------*/
 
 /*----------------*/
 #menudoc, #menudoc ul, #menudoc li{
@@ -185,14 +185,13 @@
 #menudoc ul li:hover ul{
     visibility:visible;
 }
-
-/*------------------*/
-#menudocright, #menudocright ul, #menudocright li{
+/*-------------------*/
+#menudocleft, #menudocleft ul, #menudocleft li{
     padding:0;
     margin:0;
 }
 
-#menudocright li{
+#menudocleft li{
     list-style: none;
     position: relative;
     width:100px;
@@ -203,22 +202,148 @@
     cursor:pointer;
 }
 
-#menudocright li a{
+#menudocleft li a{
     text-decoration:none;
     color: white;
 }
 
-#menudocright li:hover{
+#menudocleft li:hover{
     background-color:red;
 }
 
-#menudocright ul ul{
+#menudocleft ul ul{
     position: absolute;
     top:0;
     left:140px;
     visibility:hidden;
 }
 
-#menudocright ul li:hover ul{
+#menudocleft ul li:hover ul{
     visibility:visible;
+}
+
+/*------------------*/
+
+
+/*--------------------*/
+#menudocright2, #menudocright2 ul, #menudocright2 li{
+    padding:0;
+    margin:0;
+}
+
+#menudocright2 li{
+    list-style: none;
+    position: relative;
+    width:100%;
+    height: 30px;
+    padding:0 20px;
+    background-color: black;
+    line-height: 30px;
+    cursor:pointer;
+}
+
+#menudocright2 li a{
+    text-decoration:none;
+    color: white;
+}
+
+#menudocright2 li:hover{
+    background-color:red;
+}
+
+#menudocright2 ul ul{
+    position: absolute;
+    top:0;
+    left:140px;
+    visibility:hidden;
+}
+
+#menudocright2 ul li:hover ul{
+    visibility:visible;
+}
+/*-------------*/
+.dongtrangthai{
+    width:550px ;
+    height:120px ;
+    border:1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    margin: 10px;
+}
+
+input{
+    width: 500px;
+    margin-top:10px;
+    border-radius: 10px;
+}
+
+hr{
+    width: 500px;
+}
+
+.right123{
+    margin-left: 10%;
+}
+/*------------*/
+.khunganh1{
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+}
+
+/*.logophonghopmat{*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    float: left;*/
+/*    object-fit: contain;*/
+/*}*/
+
+.tieudephonghopmat{
+    width: 100%;
+    height: 100%;
+    float: left;
+    object-fit: contain;
+}
+.phonghopmat{
+    width:550px ;
+    height:60px ;
+    border:1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    margin: 10px;
+    float: left;
+}
+
+.taophonghopmat{
+    width:300px ;
+    height:30px ;
+    border:1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    margin: 10px;
+    float: left;
+}
+.nguoidangonline{
+    width:30px ;
+    height:30px ;
+    border:1px solid black;
+    border-radius: 50%;
+    float: left;
+    margin: 10px;
+}
+
+.anhnguoionline{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+}
+/*------------------*/
+.anhquangcao{
+    float: left;
+    margin: 5px;
+}
+.noidungquangcao{
+    float: left;
+    margin: 5px;
 }
