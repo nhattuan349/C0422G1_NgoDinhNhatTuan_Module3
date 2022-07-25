@@ -6,29 +6,95 @@
 
 .div_left{
 
-    width: 400px;
+    width: 250px;
 
     float: left;
-
-    text-align: center;
-
-}
-.div_mid{
-
-    width: 400px;
-
-    float: left;
-
-    text-align: center;
 
 }
 
-.div_right{
-
-    width: 400px;
-
+.menu{
+    width: 150px;
+}
+.nav li{
     float: left;
+    margin-right: 15px;
+}
 
-    text-align: center;
+.nav li a{
+    color: black;
+}
 
+.nav li{
+    position: relative;
+    list-style:none;
+}
+
+.nav li a{
+    padding: 16px;
+    line-height: 5px;
+    display: inline-block;
+}
+
+.nav .sub-menu{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 135px;
+    background-color: lightgreen;
+    padding: 5px 20px;
+    font-size: 60%;
+}
+
+.nav li:hover .sub-menu{
+    display: block;
+}
+
+.nav li .sub-menu{
+    top: 32px;
+    left: 0;
+}
+
+/*---------------*/
+.menu2{
+    width: 150px;
+}
+.nav2 li{
+    float: left;
+    margin-right: 15px;
+}
+
+.nav2 li a{
+    color: black;
+}
+
+.nav2 li{
+    position: relative;
+    list-style:none;
+}
+
+.nav2 li a{
+    padding: 16px;
+    line-height: 5px;
+    display: inline-block;
+}
+
+.nav .sub-menu2{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 135px;
+    background-color: lightgreen;
+    padding: 5px 20px;
+    font-size: 60%;
+}
+
+.nav2 li:hover .sub-menu2{
+    display: block;
+}
+
+.nav2 li .sub-menu2{
+    top: 32px;
+    left: 0;
 }
