@@ -97,11 +97,12 @@
     height: 30px;
     padding:0;
     margin:0;
-    background-color: #000000;
+    background-color: #ECF3FF;
     border: 1px solid #CDCDCD;
-
+    text-align: center;
 
 }
+
 
 #menu ul, #menu li{
     padding:0;
@@ -117,14 +118,15 @@
 }
 
 #menu li a{
-    width:100px;
+    width:200px;
     height: 30px;
     display: block;
     text-decoration:none;
     text-align: center;
     line-height: 30px;
-    background-color: black;
-    color: white;
+    background-color: #ECF3FF;
+    color: black;
+    margin-left: 30%;
 }
 
 #menu ul ul li a{
@@ -194,17 +196,17 @@
 #menudocleft li{
     list-style: none;
     position: relative;
-    width:100px;
-    height: 30px;
+    width:286px;
+    height: 100%;
     padding:0 20px;
-    background-color: black;
+    background-color: #ECF3FF;
     line-height: 30px;
     cursor:pointer;
 }
 
 #menudocleft li a{
     text-decoration:none;
-    color: white;
+    color: black;
 }
 
 #menudocleft li:hover{
@@ -269,10 +271,11 @@
     border-radius: 10px;
     text-align: center;
     margin: 10px;
+    background:white ;
 }
 
 input{
-    width: 500px;
+    width: 400px;
     margin-top:10px;
     border-radius: 10px;
 }
@@ -292,17 +295,14 @@ hr{
 }
 
 /*.logophonghopmat{*/
-/*    width: 100%;*/
-/*    height: 100%;*/
+/*    width: 20px;*/
+/*    height: 20px;*/
 /*    float: left;*/
 /*    object-fit: contain;*/
 /*}*/
 
-.tieudephonghopmat{
-    width: 100%;
-    height: 100%;
+.nutphonghopmat{
     float: left;
-    object-fit: contain;
 }
 .phonghopmat{
     width:550px ;
@@ -346,4 +346,90 @@ hr{
 .noidungquangcao{
     float: left;
     margin: 5px;
+}
+
+/*---------------*/
+.iconmenungang{
+    width:20px;
+    height: 20px;
+    margin-top: 5px;
+    float: left;
+}
+
+.iconmenudocleft{
+    width:20px;
+    height: 20px;
+    float: left;
+    /*margin-top: 5px;*/
+}
+
+/*----------------------------*/
+#menudongtrangthai{
+    height: 50px;
+    padding:0;
+    margin:0px;
+    background-color: white;
+    border: 1px solid #CDCDCD;
+    text-align: center;
+    font-size: 15px;
+}
+
+
+#menudongtrangthai ul, #menudongtrangthai li{
+    padding:0;
+    margin:0;
+}
+
+#menudongtrangthai li{
+    position: relative;
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding:0;
+}
+
+#menudongtrangthai li a{
+    width:160px;
+    height: 50px;
+    display: block;
+    text-decoration:none;
+    text-align: center;
+    line-height: 30px;
+    background-color: white;
+    color: black;
+}
+
+#menudongtrangthai ul ul li a{
+    width: 200px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+#menudongtrangthai li a:hover{
+    background-color: #ff0000;
+}
+
+#menudongtrangthai ul ul{
+    position: absolute;
+    top: 30px;
+    left: 15px;
+    visibility: hidden;
+}
+
+#menudongtrangthai ul li:hover ul{
+    visibility: visible;
+}
+
+/*-------------------------*/
+.icondongtrangthai{
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    float: left;
+}
+
+.iconavatadongtrangthai{
+    width: 50px;
+    height: 50px;
+    float: left;
 }
