@@ -11,6 +11,11 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+  <form action="/discountServlet" method="post">
+    <input name="productDescription">
+    <input name="listPrice">
+    <input name="discountPercentlistPrice">
+    <button type="submit">Xuất hóa đơn</button>
+  </form>
   </body>
 </html>
