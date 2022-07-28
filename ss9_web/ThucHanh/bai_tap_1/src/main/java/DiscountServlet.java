@@ -24,5 +24,6 @@ public class DiscountServlet extends HttpServlet {
         request.setAttribute("kqDiscountPercentlistPrice",discountPercentlistPrice);
         request.setAttribute("kqDiscountAmount",discountAmount);
         request.setAttribute("kqDiscountPrice",discountPrice);
+        requestDispatcher.forward(request,response);
     }
 }
