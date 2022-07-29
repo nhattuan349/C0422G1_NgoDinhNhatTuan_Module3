@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <h1>Result</h1>
-<h1>${firstOperator}${operator}${secondOperator}=${result}</h1>
+<h1>${firstOperand}${operator}${secondOperand}=${result}</h1>
 <body>
 
 </body>
