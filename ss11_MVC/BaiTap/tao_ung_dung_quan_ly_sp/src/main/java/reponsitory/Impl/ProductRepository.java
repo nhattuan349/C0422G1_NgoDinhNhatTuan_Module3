@@ -1,6 +1,7 @@
-package reponsive;
+package reponsitory.Impl;
 
-import models.Product;
+import model.Product;
+import reponsitory.IProductRepository;
 
 import java.util.ArrayList;
 import java.util.HashMap;

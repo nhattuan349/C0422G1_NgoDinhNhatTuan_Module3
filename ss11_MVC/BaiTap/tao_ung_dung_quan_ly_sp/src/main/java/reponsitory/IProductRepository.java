@@ -1,6 +1,6 @@
-package reponsive;
+package reponsitory;
 
-import models.Product;
+import model.Product;
 
 import java.util.List;
 

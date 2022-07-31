@@ -1,8 +1,9 @@
-package service;
+package service.Impl;
 
-import models.Product;
-import reponsive.IProductRepository;
-import reponsive.ProductRepository;
+import model.Product;
+import reponsitory.IProductRepository;
+import reponsitory.Impl.ProductRepository;
+import service.IProductService;
 
 import java.util.List;
 
