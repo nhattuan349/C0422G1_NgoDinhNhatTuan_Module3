@@ -9,6 +9,8 @@
 <html>
   <head>
     <title>Calculator</title>
+    <link rel="stylesheet" href="J:\CG\CodegymX\module3\bootstrap-5.0.2-dist\css\bootstrap.min.css">
+    <script src="J:\CG\CodegymX\module3\bootstrap-5.0.2-dist\js\bootstrap.min.js"></script>
   </head>
   <body>
   <h1>Simple Calculator</h1>

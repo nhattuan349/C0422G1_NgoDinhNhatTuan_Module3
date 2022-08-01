@@ -7,10 +7,14 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<p>bạn vừa nhâp vào là: ${ketQua}</p>
+<p>bạn vừa nhâp vào là: ${str2}</p>
+<p>bạn vừa nhâp vào là: ${num1}</p>
+<p>bạn vừa nhâp vào là: ${num2}</p>
+<p>bạn vừa nhâp vào là: ${sum}</p>
+</body>
 </html>

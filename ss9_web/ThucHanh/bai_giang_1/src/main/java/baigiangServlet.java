@@ -10,7 +10,8 @@ public class baigiangServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws
+            ServletException, IOException {
         String str= request.getParameter("nhandulieu");
         String str2= request.getParameter("nhandulieu2");
         int num1= Integer.parseInt(request.getParameter("nhandulieu3"));
