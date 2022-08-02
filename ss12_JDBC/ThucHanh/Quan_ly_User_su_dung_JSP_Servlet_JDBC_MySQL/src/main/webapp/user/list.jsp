@@ -31,7 +31,7 @@
 
     <form action="/users">
         <input type="text" name="name">
-        <input type="submit" name = "action" value="findbyName">
+        <input type="submit" name = "action" value="findByName">
     </form>
 </center>
 <div align="center">

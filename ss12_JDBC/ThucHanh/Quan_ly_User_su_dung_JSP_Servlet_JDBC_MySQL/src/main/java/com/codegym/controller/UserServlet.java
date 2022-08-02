@@ -58,6 +58,7 @@ public class UserServlet extends HttpServlet {
                     break;
                 case "findByCountry":
                     findByCountry(request, response);
+                    break;
                 case "findByName":
                     findByName(request, response);
                     break;
@@ -77,7 +78,7 @@ public class UserServlet extends HttpServlet {
         String name = request.getParameter("name");
         List<User> users = userDAO.sort(name);
         request.setAttribute("listUser",users);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("user/lis.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user/list.jsp");
         try {
             dispatcher.forward(request, response);
         }catch (ServletException e) {
@@ -91,7 +92,7 @@ public class UserServlet extends HttpServlet {
         String country = request.getParameter("country");
         List<User> users = userDAO.findByCountry(country);
         request.setAttribute("listUser",users);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("user/lis.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user/list.jsp");
         try {
             dispatcher.forward(request, response);
         }catch (ServletException e) {
