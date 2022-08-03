@@ -9,6 +9,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "CpmputerServlet", urlPatterns = {"", "/computer"})
 public class ComputerServlet extends HttpServlet {
@@ -31,6 +32,16 @@ public class ComputerServlet extends HttpServlet {
     }
 
     private void showListForm(HttpServletRequest request, HttpServletResponse response) {
+        List<Computer> computers = computerService.findAll();
+        request.setAttribute("computers", computers);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("computer/list.jsp");
+        try {
+            dispatcher.forward(request,response);
+        }catch (ServletException e) {
+            e.printStackTrace();
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void showAddForm(HttpServletRequest request, HttpServletResponse response) {

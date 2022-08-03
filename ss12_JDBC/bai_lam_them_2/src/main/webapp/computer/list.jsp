@@ -36,7 +36,7 @@
         <tr>
             <td><a href="/computer?action=view&id=${computer.id()}">${computer.getComputerName()}</a></td>
             <td>${computer.ram()}</td>
-            <td>${computer.chip()}</td>
+            <td>${computer.cpu()}</td>
             <td>${computer.dateProduce()}</td>
         </tr>
     </c:forEach>
