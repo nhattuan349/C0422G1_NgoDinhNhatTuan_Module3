@@ -158,14 +158,20 @@
     </tr>
     <c:forEach items="${products}" var="product">
         <tr>
-            <td><a href="/product?action=view&id=${product.getId()}">${product.getName()}</a></td>
-            <td>${product.getPrice()}</td>
-            <td>${product.getAmount()}</td>
-            <td>${product.getProduction()}</td>
-            <td><a href="/product?action=edit&id=${product.getId()}">Sửa         </a></td>
-            <td><a href="/product?action=delete&id=${product.getId()}">Xóa         </a></td>
-            <td><a href="/product?action=findById&id=${product.getId()}">Xem chi tiet</a></td>
-
+<%--            <td><a href="/product?action=view&id=${product.getId()}">${product.getName()}</a></td>--%>
+            <td><a href="/product?action=view&id=${product.id()}">${product.getName()}</a></td>
+<%--            <td>${product.getPrice()}</td>--%>
+<%--            <td>${product.getAmount()}</td>--%>
+<%--            <td>${product.getProduction()}</td>--%>
+            <td>${product.price()}</td>
+            <td>${product.amount()}</td>
+            <td>${product.production()}</td>
+<%--            <td><a href="/product?action=edit&id=${product.getId()}">Sửa         </a></td>--%>
+<%--            <td><a href="/product?action=delete&id=${product.getId()}">Xóa         </a></td>--%>
+<%--            <td><a href="/product?action=findById&id=${product.getId()}">Xem chi tiet</a></td>--%>
+            <td><a href="/product?action=edit&id=${product.id()}">Sửa         </a></td>
+            <td><a href="/product?action=delete&id=${product.id()}">Xóa         </a></td>
+            <td><a href="/product?action=findById&id=${product.id()}">Xem chi tiet</a></td>
         </tr>
     </c:forEach>
 

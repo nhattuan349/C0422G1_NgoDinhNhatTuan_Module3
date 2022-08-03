@@ -1,8 +1,8 @@
-package service.Impl;
+package service.impl;
 
 import model.Product;
 import reponsitory.IProductRepository;
-import reponsitory.Impl.ProductRepository;
+import reponsitory.impl.ProductRepository;
 import service.IProductService;
 
 import java.util.List;

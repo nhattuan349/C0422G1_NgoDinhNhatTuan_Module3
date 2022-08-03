@@ -1,4 +1,4 @@
-package reponsitory.Impl;
+package reponsitory.impl;
 
 import model.Product;
 import reponsitory.IProductRepository;

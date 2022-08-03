@@ -25,19 +25,23 @@
 <table>
     <tr>
         <td>Name:</td>
-        <td>${requestScope["product"].getName()}</td>
+<%--        <td>${requestScope["product"].getName()}</td>--%>
+        <td>${requestScope["product"].name()}</td>
     </tr>
     <tr>
         <td>Price:</td>
-        <td>${requestScope["product"].getPrice()}</td>
+<%--        <td>${requestScope["product"].getPrice()}</td>--%>
+        <td>${requestScope["product"].price()}</td>
     </tr>
     <tr>
         <td>Amount:</td>
-        <td>${requestScope["product"].getAmount()}</td>
+<%--        <td>${requestScope["product"].getAmount()}</td>--%>
+        <td>${requestScope["product"].amount()}</td>
     </tr>
     <tr>
         <td>Production:</td>
-        <td>${requestScope["product"].getProduction()}</td>
+<%--        <td>${requestScope["product"].getProduction()}</td>--%>
+        <td>${requestScope["product"].production()}</td>
     </tr>
 </table>
 </body>
