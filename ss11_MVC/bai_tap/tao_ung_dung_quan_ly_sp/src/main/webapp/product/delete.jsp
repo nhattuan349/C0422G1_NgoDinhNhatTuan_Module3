@@ -22,23 +22,23 @@
         <table>
             <tr>
                 <td>Name: </td>
-<%--                <td>${requestScope["product"].getName()}</td>--%>
-                <td>${requestScope["product"].name()}</td>
+                <td>${requestScope["product"].getName()}</td>
+<%--                <td>${product.name}</td>--%>
             </tr>
             <tr>
                 <td>Amount: </td>
-<%--                <td>${requestScope["product"].getAmount()}</td>--%>
-                <td>${requestScope["product"].amount()}</td>
+                <td>${requestScope["product"].getAmount()}</td>
+<%--                <td>${product.amount}</td>--%>
             </tr>
             <tr>
                 <td>Price: </td>
-<%--                <td>${requestScope["product"].getPrice()}</td>--%>
-                <td>${requestScope["product"].price()}</td>
+                <td>${requestScope["product"].getPrice()}</td>
+<%--                <td>${product.price}</td>--%>
             </tr>
             <tr>
                 <td>Production: </td>
-<%--                <td>${requestScope["product"].getProduction()}</td>--%>
-                <td>${requestScope["product"].production()}</td>
+                <td>${requestScope["product"].getProduction()}</td>
+<%--                <td>${product.production}</td>--%>
             </tr>
 
             <tr>

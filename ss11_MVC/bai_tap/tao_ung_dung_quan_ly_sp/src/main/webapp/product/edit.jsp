@@ -28,24 +28,24 @@
         <table>
             <tr>
                 <td>Name: </td>
-<%--                <td><input type="text" name="name" id="name" value="${requestScope["product"].getName()}"></td>--%>
-                <td><input type="text" name="name" id="name" value="${requestScope["product"].name()}"></td>
+                <td><input type="text" name="name" id="name" value="${requestScope["product"].getName()}"></td>
+<%--                <td><input type="text" name="name" id="name" value="${product.name}"></td>--%>
             </tr>
             <tr>
                 <td>Price: </td>
-<%--                <td><input type="text" name="price" id="price" value="${requestScope["product"].getPrice()}"></td>--%>
-                <td><input type="text" name="price" id="price" value="${requestScope["product"].price()}"></td>
+                <td><input type="text" name="price" id="price" value="${requestScope["product"].getPrice()}"></td>
+<%--                <td><input type="text" name="price" id="price" value="${product.price}"></td>--%>
             </tr>
             <tr>
                 <td>Amount: </td>
-<%--                <td><input type="text" name="amount" id="amount" value="${requestScope["product"].getAmount()}"></td>--%>
-                <td><input type="text" name="amount" id="amount" value="${requestScope["product"].amount()}"></td>
+                <td><input type="text" name="amount" id="amount" value="${requestScope["product"].getAmount()}"></td>
+<%--                <td><input type="text" name="amount" id="amount" value="${product.amount}"></td>--%>
             </tr>
 
             <tr>
                 <td>Production: </td>
-<%--                <td><input type="text" name="production" id="production" value="${requestScope["product"].getProduction()}"></td>--%>
-                <td><input type="text" name="production" id="production" value="${requestScope["product"].production()}"></td>
+                <td><input type="text" name="production" id="production" value="${requestScope["product"].getProduction()}"></td>
+<%--                <td><input type="text" name="production" id="production" value="${product.production}"></td>--%>
             </tr>
             <tr>
                 <td></td>
