@@ -1,6 +1,6 @@
 package com.codegym.controller;
 
-import com.codegym.dao.Impl.UserDAO;
+import com.codegym.dao.impl.UserDAO;
 import com.codegym.model.User;
 
 import javax.servlet.*;
@@ -49,10 +49,10 @@ public class UserServlet extends HttpServlet {
         }
         try {
             switch (action) {
-                case "create":
+                case "create"://hiển thị
                     showNewForm(request, response);
                     break;
-                case "edit":
+                case "edit"://cập nhật
                     showEditForm(request, response);
                     break;
                 case "delete":
@@ -176,6 +176,4 @@ public class UserServlet extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("user/list.jsp");
         dispatcher.forward(request, response);
     }
-
-
 }

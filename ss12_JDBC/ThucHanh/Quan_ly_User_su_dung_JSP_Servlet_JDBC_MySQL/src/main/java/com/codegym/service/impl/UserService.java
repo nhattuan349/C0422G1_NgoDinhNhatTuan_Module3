@@ -1,8 +1,8 @@
-package com.codegym.Service.Impl;
+package com.codegym.service.impl;
 
-import com.codegym.Service.IUserService;
+import com.codegym.service.IUserService;
 import com.codegym.dao.IUserDAO;
-import com.codegym.dao.Impl.UserDAO;
+import com.codegym.dao.impl.UserDAO;
 import com.codegym.model.User;
 
 import java.sql.SQLException;

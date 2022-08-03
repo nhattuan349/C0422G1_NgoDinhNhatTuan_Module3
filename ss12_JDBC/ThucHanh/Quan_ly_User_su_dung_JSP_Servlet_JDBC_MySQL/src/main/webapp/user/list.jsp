@@ -60,7 +60,7 @@
                 <td><c:out value="${user.country}"/></td>
                 <td>
                     <a href="/users?action=edit&id=${user.id}">Edit</a>
-<%--                    <a href="/users?action=delete&id=${user.id}">Delete</a>--%>
+                <%--<a href="/users?action=delete&id=${user.id}">Delete</a>--%>
                     <button onclick="infoDelete('${user.id}', '${user.name}')" type="button"
                             class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         Delete
