@@ -29,15 +29,15 @@
 
     <div class="row">
         <nav class="navbar navbar-expand-lg navbar-light bg-light   ">
-            <div class="col-2"></div>
-            <div class="col-7">
+            <div class="col-4"></div>
+            <div class="col-5">
                 <div class="container-fluid d-flex justify-content-center ">
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#"  role="button"
+                                <a class="nav-link dropdown-toggle float-end" href="#"  role="button"
                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    Home
+                                    <span class="float-end "><a class="text-decoration-none" href="">Home</a></span>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="#">Action</a></li>
@@ -50,9 +50,9 @@
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#"  role="button"
+                                <a class="nav-link dropdown-toggle float-end" href="#"  role="button"
                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    Employee
+                                    <span class="float-end"><a class="text-decoration-none" href="/employee">Employee</a></span>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="#">Action</a></li>
@@ -65,9 +65,24 @@
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#"  role="button"
+                                <a class="nav-link dropdown-toggle float-end" href="#"  role="button"
                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    Customer
+                                    <span class="float-end"><a class="text-decoration-none" href="/customer">Customer</a></span>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Demo</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle float-end" href="#" role="button"
+                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="float-end"><a class="text-decoration-none" href="/service">Service</a></span>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="#">Action</a></li>
@@ -80,9 +95,9 @@
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button"
+                                <a class="nav-link dropdown-toggle float-end" href="#" role="button"
                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    Service
+                                    <span class="float-end"><a class="text-decoration-none" href="/contract">Contract</a></span>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="#">Action</a></li>
@@ -93,22 +108,6 @@
                                     <li><a class="dropdown-item" href="#">Something else here</a></li>
                                 </ul>
                             </li>
-
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button"
-                                   data-bs-toggle="dropdown" aria-expanded="false">
-                                    Contract
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </li>
-
                         </ul>
 
 
@@ -126,7 +125,7 @@
     </div>
 
     <div class="row">
-        <div class="col-3 border-bottom-0 p-3 mb-5" style="background-image: url('/images/slide_h22.jpg');height: 665px;" >
+        <div class="col-3 border-bottom-0 p-3 mb-5" style="background-image: url('/images/slide_h22.jpg');height: 647px;" >
             <div>
                 <div class="list-group">
                     <a href="#" class="list-group-item list-group-item-action active" aria-current="true"
