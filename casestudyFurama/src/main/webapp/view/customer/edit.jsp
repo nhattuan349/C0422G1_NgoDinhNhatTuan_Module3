@@ -15,7 +15,7 @@
 <center>
     <h1>Customer Management</h1>
     <h2>
-        <a href="furama?action=users">List All Customer</a>
+        <a href="customer?action=users">List All Customer</a>
     </h2>
 </center>
 <div align="center">

@@ -15,7 +15,7 @@
 <center>
     <h1>Customer Management</h1>
     <h2>
-        <a href="furama?action=users">List All customer</a>
+        <a href="customer?action=users">List All customer</a>
     </h2>
 </center>
 <div align="center">
@@ -25,21 +25,21 @@
                 <h2>Add New Customer</h2>
             </caption>
             <tr>
-                <th>Customer Name:</th>
+                <th>Customer Mã loại khách :</th>
                 <td>
-                    <input type="text" name="name" id="name" size="45"/>
+                    <input type="text" name="maLoaiKhach" id="ma_loai_khach" size="45"/>
                 </td>
             </tr>
             <tr>
-                <th>Customer Email:</th>
+                <th>Customer Họ và Tên:</th>
                 <td>
-                    <input type="text" name="email" id="email" size="45"/>
+                    <input type="text" name="hoTen" id="ho_ten" size="45"/>
                 </td>
             </tr>
             <tr>
-                <th>Country:</th>
+                <th>Ngày Sinh:</th>
                 <td>
-                    <input type="text" name="country" id="country" size="15"/>
+                    <input type="text" name="ngaySinh" id="ngay_sinh" size="15"/>
                 </td>
             </tr>
             <tr>

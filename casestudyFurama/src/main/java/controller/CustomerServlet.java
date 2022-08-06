@@ -74,7 +74,7 @@ public class CustomerServlet extends HttpServlet {
     private void listCustomer(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException {
         List<Customer> listCustomer = customerRepository.selectAllCustomer();
         request.setAttribute("listCustomer", listCustomer);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("customer/list.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/list.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -84,7 +84,7 @@ public class CustomerServlet extends HttpServlet {
 
         List<Customer> listUser = customerRepository.selectAllCustomer();
         request.setAttribute("listUser", listUser);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("user/list.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/list.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -92,13 +92,13 @@ public class CustomerServlet extends HttpServlet {
     private void showEditFormCustomer(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException {
         int maKhachHang = Integer.parseInt(request.getParameter("ma_khach_hang"));
         Customer existicungCustomer = customerRepository.selectCustomer(maKhachHang);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("user/edit.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/edit.jsp");
         request.setAttribute("customer", existicungCustomer);
         dispatcher.forward(request, response);
     }
 
     private void showNewFormCustomer(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("customer/create.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/create.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -114,7 +114,7 @@ public class CustomerServlet extends HttpServlet {
         String diaChi = request.getParameter("dia_chi");
         Customer newCustomer = new Customer(maLoaiKhach,hoTen,ngaySinh,gioiTinh,soCMND,soDienThoai,email,diaChi);
         customerRepository.insertCustomer(newCustomer);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("customer/create.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/create.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -131,7 +131,7 @@ public class CustomerServlet extends HttpServlet {
 
             Customer book = new Customer(maKhachHang,maLoaiKhach,hoTen,ngaySinh,gioiTinh,soCMND,soDienThoai,email,diaChi);
             customerRepository.updateCustomer(book);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("customer/edit.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/edit.jsp");
             dispatcher.forward(request, response);
     }
 }

@@ -288,11 +288,12 @@
             </table>
         </div>
     </div>
+<%--    ------------------------------------------------------------------------------%>
     <div class="row">
         <center>
             <h1>User Management</h1>
             <h2>
-                <a href="/customer?action=create">Add New Customer</a>
+                <a href="customer?action=create">Add New Customer</a>
             </h2>
         </center>
         <div align="center">
