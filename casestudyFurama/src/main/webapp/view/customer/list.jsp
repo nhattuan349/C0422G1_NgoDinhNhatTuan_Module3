@@ -288,6 +288,48 @@
             </table>
         </div>
     </div>
+    <div class="row">
+        <center>
+            <h1>User Management</h1>
+            <h2>
+                <a href="/customer?action=create">Add New Customer</a>
+            </h2>
+        </center>
+        <div align="center">
+            <table border="1" cellpadding="5">
+                <caption><h2>List of Customer</h2></caption>
+                <tr>
+                    <th>ma_khach_hang</th>
+                    <th>ma_loai_khach</th>
+                    <th>ho_ten</th>
+                    <th>ngay_sinh</th>
+                    <th>gioi_tinh</th>
+                    <th>so_cmnd</th>
+                    <th>so_dien_thoai</th>
+                    <th>email</th>
+                    <th>dia_chi</th>
+                    <th>Actions</th>
+                </tr>
+                <c:forEach var="customer" items="${listCustomer}">
+                    <tr>
+                        <td><c:out value="${customer.maKhachHang}"/></td>
+                        <td><c:out value="${customer.maLoaiKhach}"/></td>
+                        <td><c:out value="${customer.hoTen}"/></td>
+                        <td><c:out value="${customer.ngaySinh}"/></td>
+                        <td><c:out value="${customer.gioiTinh}"/></td>
+                        <td><c:out value="${customer.soCMND}"/></td>
+                        <td><c:out value="${customer.soDienThoai}"/></td>
+                        <td><c:out value="${customer.email}"/></td>
+                        <td><c:out value="${customer.diaChi}"/></td>
+
+                            <a href="/customer?action=edit&id=${user.id}">Edit</a>
+                            <a href="/customer?action=delete&id=${user.id}">Delete</a>
+                        </td>
+                    </tr>
+                </c:forEach>
+            </table>
+        </div>
+    </div>
 </div>
 <%--    <h1>Customer Manager</h1>--%>
 <%--    <h2>--%>

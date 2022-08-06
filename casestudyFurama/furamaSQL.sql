@@ -1,6 +1,6 @@
-drop database if exists FuramaS;
-create database FuramaS;
-use FuramaS;
+drop database if exists FuramaSQL;
+create database FuramaSQL;
+use FuramaSQL;
 
 create table vi_tri(
 ma_vi_tri int auto_increment primary key,
