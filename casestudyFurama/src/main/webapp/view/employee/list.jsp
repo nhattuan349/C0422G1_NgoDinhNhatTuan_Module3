@@ -35,10 +35,12 @@
                 <div class="container-fluid d-flex justify-content-center ">
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle float-end" href="#"  role="button"
                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    <span class="float-end "><a class="text-decoration-none" href="/furama">Home</a></span>
+                                    <span class="float-end "><a class="text-decoration-none"
+                                                                href="/furama">Home</a></span>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="#">Action</a></li>

@@ -1,6 +1,6 @@
-drop database if exists FuramaSQL;
-create database FuramaSQL;
-use FuramaSQL;
+drop database if exists Furamat;
+create database Furamat;
+use Furamat;
 
 create table vi_tri(
 ma_vi_tri int auto_increment primary key,
@@ -69,9 +69,9 @@ dien_tich int,
 chi_phi_thue double,
 so_nguoi_toi_da int,
 ma_kieu_thue int,
-FOREIGN KEY (ma_kieu_thue) REFERENCES kieu_thue(ma_kieu_thue),
+FOREIGN KEY (ma_kieu_thue) REFERENCES kieu_thue(ma_kieu_thue)on delete set null,
 ma_loai_dich_vu int,
-FOREIGN KEY (ma_loai_dich_vu) REFERENCES loai_dich_vu(ma_loai_dich_vu),
+FOREIGN KEY (ma_loai_dich_vu) REFERENCES loai_dich_vu(ma_loai_dich_vu) on delete set null,
 tieu_chuan_phong varchar(45),
 mo_ta_tien_nghi_khac varchar(45),
 dien_tich_ho_boi double,
@@ -87,9 +87,9 @@ tien_dat_coc double,
 ma_nhan_vien int,
 FOREIGN KEY (ma_nhan_vien) REFERENCES nhan_vien(ma_nhan_vien),
 ma_khach_hang int,
-FOREIGN KEY (ma_khach_hang) REFERENCES khach_hang(ma_khach_hang),
+FOREIGN KEY (ma_khach_hang) REFERENCES khach_hang(ma_khach_hang) on delete set null,
 ma_dich_vu int,
-FOREIGN KEY (ma_dich_vu) REFERENCES dich_vu(ma_dich_vu)
+FOREIGN KEY (ma_dich_vu) REFERENCES dich_vu(ma_dich_vu)on delete set null
 );
 
 create table dich_vu_di_kem(
@@ -103,9 +103,9 @@ trang_thai varchar(45)
 create table hop_dong_chi_tiet(
 ma_hop_dong_chi_tiet int auto_increment primary key,
 ma_hop_dong int,
-FOREIGN KEY (ma_hop_dong) REFERENCES hop_dong(ma_hop_dong),
+FOREIGN KEY (ma_hop_dong) REFERENCES hop_dong(ma_hop_dong)on delete set null,
 ma_dich_vu_di_kem int,
-FOREIGN KEY (ma_dich_vu_di_kem) REFERENCES dich_vu_di_kem(ma_dich_vu_di_kem),
+FOREIGN KEY (ma_dich_vu_di_kem) REFERENCES dich_vu_di_kem(ma_dich_vu_di_kem)on delete set null,
 so_luong int
 );
 
@@ -207,6 +207,7 @@ values ('1','5','2','4'),
 ('6','1','1','3'),
 ('7','2','1','2'),
 ('8','2','12','2');
+
 
 
 

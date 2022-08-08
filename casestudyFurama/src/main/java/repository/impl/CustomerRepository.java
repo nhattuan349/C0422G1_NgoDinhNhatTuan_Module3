@@ -1,6 +1,7 @@
 package repository.impl;
 
 import model.Customer;
+import model.CustomerType;
 import repository.ICustomerRepository;
 
 import java.sql.*;
@@ -8,18 +9,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerRepository implements ICustomerRepository {
-    private String jdbcURL = "jdbc:mysql://localhost:3306/furamaS?useSSL=false";
+    private String jdbcURL = "jdbc:mysql://localhost:3306/Furamat?useSSL=false";
     private String jdbcUsername = "root";
     private String jdbcPassword = "Baydem349";
 
-    private static final String INSERT_CUSTOMER_SQL = "INSERT INTO khach_hang (ma_khach_hang,ma_loai_khach,ho_ten," +
+    private static final String INSERT_CUSTOMER_SQL = "INSERT INTO khach_hang (ma_loai_khach,ho_ten," +
             "ngay_sinh,gioi_tinh,so_cmnd,so_dien_thoai,email,dia_chi) " +
-            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
+            "VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
     private static final String SELECT_CUSTOMER_BY_ID = "select ma_khach_hang,ma_loai_khach,ho_ten," +
             "ngay_sinh,gioi_tinh,so_cmnd,so_dien_thoai,email,dia_chi from khach_hang where ma_khach_hang =?";
     private static final String SELECT_ALL_CUSTOMER = "select * from khach_hang";
+    private static final String SELECT_ALL_CUSTOMER_TYPE = "select * from loai_khach";
+
     private static final String DELETE_CUSTOMER_SQL = "delete from khach_hang where ma_khach_hang = ?;";
-    private static final String UPDATE_CUSTOMER_SQL = "update khach_hang set name = ?,email= ?, country =? where ma_khach_hang = ?;";
+    private static final String UPDATE_CUSTOMER_SQL = "update khach_hang set " +
+            "ma_loai_khach= ?," +
+            "ho_ten= ?," +
+            "ngay_sinh= ?," +
+            "gioi_tinh= ?," +
+            " so_cmnd =?," +
+            " so_dien_thoai =?," +
+            " email =?," +
+            " dia_chi =?" +
+            " where ma_khach_hang = ?;";
 
 
     public CustomerRepository() {
@@ -43,7 +55,6 @@ public class CustomerRepository implements ICustomerRepository {
     @Override
     public void insertCustomer(Customer customer) throws SQLException {
         System.out.println(INSERT_CUSTOMER_SQL);
-        // try-with-resource statement will auto close the connection.
         try (Connection connection = getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(INSERT_CUSTOMER_SQL)) {
             preparedStatement.setInt(1, customer.getMaLoaiKhach());
             preparedStatement.setString(2, customer.getHoTen());
@@ -123,6 +134,31 @@ public class CustomerRepository implements ICustomerRepository {
     }
 
     @Override
+    public List<CustomerType> selectCustomerType() {
+        // using try-with-resources to avoid closing resources (boiler plate code)
+        List<CustomerType> customersType = new ArrayList<>();
+        // Step 1: Establishing a Connection
+        try (Connection connection = getConnection();
+
+             // Step 2:Create a statement using connection object
+             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_CUSTOMER_TYPE);) {
+            System.out.println(preparedStatement);
+            // Step 3: Execute the query or update query
+            ResultSet rs = preparedStatement.executeQuery();
+
+            // Step 4: Process the ResultSet object.
+            while (rs.next()) {
+                int maLoaiKhach = rs.getInt("ma_loai_khach");
+                String tenLoaiKhach = rs.getString("ten_loai_khach");
+                customersType.add(new CustomerType(maLoaiKhach,tenLoaiKhach));
+            }
+        } catch (SQLException e) {
+            printSQLException(e);
+        }
+        return customersType;
+    }
+
+    @Override
     public boolean deleteCustomer(int id) throws SQLException {
         boolean rowDeleted;
         try (Connection connection = getConnection(); PreparedStatement statement = connection.prepareStatement(DELETE_CUSTOMER_SQL);) {
@@ -150,6 +186,8 @@ public class CustomerRepository implements ICustomerRepository {
         }
         return rowUpdated;
     }
+
+
 
     private void printSQLException(SQLException ex) {
         for (Throwable e : ex) {
