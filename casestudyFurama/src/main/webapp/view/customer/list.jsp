@@ -116,8 +116,6 @@
                                 </ul>
                             </li>
                         </ul>
-
-
                     </div>
                 </div>
             </div>
@@ -127,7 +125,6 @@
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>
-
         </nav>
     </div>
     <div class="row">
@@ -137,8 +134,6 @@
                 <a class="text-decoration-underline text-white" href="customer?action=create">Add</a>
             </button>
     </span>
-
-
         <div class="col-lg-12">
             <table id="tableCustomer" class="table table-striped table-bordered" style="width:100%">
                 <thead>
@@ -164,7 +159,7 @@
                             <c:forEach var="customerType" items="${listCustomerType}">
                                 <c:if test = "${customer.maLoaiKhach==customerType.maLoaiKhach}"> ${customerType.tenLoaiKhach}</c:if>
                             </c:forEach>
-<%--                            <c:out value="${customer.maLoaiKhach}"/>--%>
+                                <%--                            <c:out value="${customer.maLoaiKhach}"/>--%>
                         </td>
                         <td><c:out value="${customer.hoTen}"/></td>
                         <td><c:out value="${customer.ngaySinh}"/></td>
@@ -193,7 +188,7 @@
                             <!-- Button to Open the Modal -->
                             <button type="button" class="btn btn-primary bg-danger" data-bs-toggle="modal"
                                     data-bs-target="#modalDelete"
-                                onclick="setIdToFormDelete('${customer.maKhachHang}')">
+                                    onclick="setIdToFormDelete('${customer.maKhachHang}')">
                                 Delete
                             </button>
 
@@ -206,52 +201,6 @@
         </div>
     </div>
 </div>
-<%--    <h1>Customer Manager</h1>--%>
-<%--    <h2>--%>
-<%--        <a href="furama?action=users">List All Customer</a>--%>
-<%--    </h2>--%>
-<%--    <h2>--%>
-<%--        <a href="/furama?action=sort"> Sort By Name</a>--%>
-<%--    </h2>--%>
-<%--    <h2>--%>
-<%--        <a href="/furama?action=create"> Add New Customer</a>--%>
-<%--    </h2>--%>
-<%--    <form action="/furama">--%>
-<%--        <input type="text" name="country">--%>
-<%--        <input type="submit" name="action" value="findByCountry">--%>
-<%--    </form>--%>
-
-<%--    <form action="/furama">--%>
-<%--        <input type="text" name="name">--%>
-<%--        <input type="submit" name="action" value="findByName">--%>
-<%--    </form>--%>
-
-<%--<div align="center">--%>
-<%--    <table border="1" cellpadding="5">--%>
-<%--        <caption>--%>
-<%--            <h2>Danh sách Customer</h2>--%>
-<%--        </caption>--%>
-<%--        <tr>--%>
-<%--            <th>ID</th>--%>
-<%--            <th>NAME</th>--%>
-<%--            <th>EMAIL</th>--%>
-<%--            <th>COUNTRY</th>--%>
-<%--            <th>ACTIONS</th>--%>
-<%--        </tr>--%>
-<%--        <c:forEach items="${listCustomer}" var="customer">--%>
-<%--            <tr>--%>
-<%--                <td>${customer.id}</td>--%>
-<%--                <td>${customer.name}</td>--%>
-<%--                <td>${customer.email}</td>--%>
-<%--                <td>${customer.country}</td>--%>
-<%--                <td>--%>
-<%--                    <a href="/furama?action=edit&id=${customer.id}"> Edit</a>--%>
-<%--                    <a href="/furama?action=delete&id=${customer.id}">Delete</a>--%>
-<%--                </td>--%>
-<%--            </tr>--%>
-<%--        </c:forEach>--%>
-<%--    </table>--%>
-<%--</div>--%>
 
 <!-- The modalDelete -->
 <div class="modal" id="modalDelete">
@@ -282,7 +231,7 @@
 
 <script src="../../jquery/jquery-3.5.1.min.js"></script>
 <script src="../../datatables/js/jquery.dataTables.min.js"></script>
-<script src="../../bootstrap520/js/bootstrap.min.js"></script>
+<script src="../../datatables/js/dataTables.bootstrap5.min.js"></script>
 
 
 <form action="/customer" id="formDelete">
@@ -300,12 +249,9 @@
             }
         )
     })
-
-
     function setIdToFormDelete(maKhachHang) {
         document.getElementById("ma_khach_hang").value = maKhachHang;
     }
-
     function submitFormDelete() {
         document.getElementById("formDelete").submit();
     }

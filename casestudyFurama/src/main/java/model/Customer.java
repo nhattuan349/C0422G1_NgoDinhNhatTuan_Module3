@@ -6,15 +6,15 @@ public class Customer {
     private String hoTen;
     private String ngaySinh;
     private int gioiTinh;
-    private int soCMND;
-    private int soDienThoai;
+    private String soCMND;
+    private String soDienThoai;
     private String email;
     private String diaChi;
 
     public Customer() {
     }
 
-    public Customer(int maLoaiKhach, String hoTen, String ngaySinh, int gioiTinh, int soCMND, int soDienThoai, String email, String diaChi) {
+    public Customer(int maLoaiKhach, String hoTen, String ngaySinh, int gioiTinh, String soCMND, String soDienThoai, String email, String diaChi) {
         this.maLoaiKhach = maLoaiKhach;
         this.hoTen = hoTen;
         this.ngaySinh = ngaySinh;
@@ -25,7 +25,7 @@ public class Customer {
         this.diaChi = diaChi;
     }
 
-    public Customer(int maKhachHang, int maLoaiKhach, String hoTen, String ngaySinh, int gioiTinh, int soCMND, int soDienThoai, String email, String diaChi) {
+    public Customer(int maKhachHang, int maLoaiKhach, String hoTen, String ngaySinh, int gioiTinh, String soCMND, String soDienThoai, String email, String diaChi) {
         this.maKhachHang = maKhachHang;
         this.maLoaiKhach = maLoaiKhach;
         this.hoTen = hoTen;
@@ -77,19 +77,19 @@ public class Customer {
         this.gioiTinh = gioiTinh;
     }
 
-    public int getSoCMND() {
+    public String getSoCMND() {
         return soCMND;
     }
 
-    public void setSoCMND(int soCMND) {
+    public void setSoCMND(String soCMND) {
         this.soCMND = soCMND;
     }
 
-    public int getSoDienThoai() {
+    public String getSoDienThoai() {
         return soDienThoai;
     }
 
-    public void setSoDienThoai(int soDienThoai) {
+    public void setSoDienThoai(String soDienThoai) {
         this.soDienThoai = soDienThoai;
     }
 

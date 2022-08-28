@@ -1,7 +1,6 @@
 package controller;
 
-import model.Customer;
-import model.CustomerType;
+
 import model.Facility;
 import service.IFacilityService;
 import service.impl.FacilityService;
@@ -13,8 +12,8 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet(name = "ServiceServlet", urlPatterns = {"/service"})
-public class ServiceServlet extends HttpServlet {
+@WebServlet(name = "ServiceServlet", urlPatterns = {"/service","/facility"})
+public class FacilityServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     private IFacilityService facilityService = new FacilityService();
@@ -77,71 +76,81 @@ public class ServiceServlet extends HttpServlet {
     }
 
     private void deleteFacility(HttpServletRequest request, HttpServletResponse response)
-         throws SQLException, IOException, ServletException {
-            int maDichVu = Integer.parseInt(request.getParameter("ma_khach_hang"));
-            customerService.deleteCustomer(maKhachHang);
+            throws SQLException, IOException, ServletException {
+        int maDichVu = Integer.parseInt(request.getParameter("ma_dich_vu"));
+        facilityService.deleteFacility(maDichVu);
 
-            List<Customer> listCustomer = customerService.selectAllCustomer();
-            request.setAttribute("listCustomer", listCustomer);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/list.jsp");
-            dispatcher.forward(request, response);
+        List<Facility> listFacility = facilityService.selectAllFacility();
+        request.setAttribute("listFacility", listFacility);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/service/list.jsp");
+        dispatcher.forward(request, response);
     }
 
     private void showEditFormFacility(HttpServletRequest request, HttpServletResponse response)
-        throws SQLException, IOException, ServletException {
-        int maKhachHang = Integer.parseInt(request.getParameter("ma_khach_hang"));
-        Customer existicungCustomer = customerService.selectCustomer(maKhachHang);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/edit.jsp");
-        request.setAttribute("customer", existicungCustomer);
+            throws SQLException, IOException, ServletException {
+        int maDichVu = Integer.parseInt(request.getParameter("ma_dich_vu"));
+        Facility existicungFacility = facilityService.selectFacility(maDichVu);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/service/edit.jsp");
+        request.setAttribute("facility", existicungFacility);
         dispatcher.forward(request, response);
     }
 
     private void showNewFormFacility(HttpServletRequest request, HttpServletResponse response)
-        throws SQLException, IOException, ServletException {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/create.jsp");
-            dispatcher.forward(request, response);
-        }
+            throws SQLException, IOException, ServletException {
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/service/create.jsp");
+        dispatcher.forward(request, response);
     }
+
+
 
     private void insertFacility(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
-        int maLoaiKhach = Integer.parseInt(request.getParameter("ma_loai_khach"));
-        String hoTen = request.getParameter("ho_ten");
-        String ngaySinh = request.getParameter("ngay_sinh");
-        int gioiTinh = Integer.parseInt(request.getParameter("gioi_tinh"));
-        int soCMND = Integer.parseInt(request.getParameter("so_cmnd"));
-        int soDienThoai = Integer.parseInt(request.getParameter("so_dien_thoai"));
-        String email = request.getParameter("email");
-        String diaChi = request.getParameter("dia_chi");
-        Customer newCustomer = new Customer(maLoaiKhach, hoTen, ngaySinh, gioiTinh, soCMND,
-                soDienThoai, email, diaChi);
-        customerService.insertCustomer(newCustomer);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/create.jsp");
+
+        String tenDichVu = request.getParameter("ten_dich_vu");
+        int dienTich = Integer.parseInt(request.getParameter("dien_tich"));
+        double chiPhiThue =Double.parseDouble(request.getParameter("chi_phi_thue"));
+        int soNguoiToiDa = Integer.parseInt(request.getParameter("so_nguoi_toi_da"));
+        int maKieu_Thue = Integer.parseInt(request.getParameter("ma_kieu_thue"));
+        int maLoaiDichVu = Integer.parseInt(request.getParameter("ma_loai_dich_vu"));
+        String tieuChuanPhong = request.getParameter("tieu_chuan_phong");
+        String moTaTienNghiKhac = request.getParameter("mo_ta_tien_nghi_khac");
+        double dienTichHoBoi =Double.parseDouble(request.getParameter("dien_tich_ho_boi"));
+        int soTang = Integer.parseInt(request.getParameter("so_tang"));
+        String dichVuMienPhiDiKem = request.getParameter("dich_vu_mien_phi_di_kem");
+
+        Facility newFacility = new Facility(tenDichVu,dienTich, chiPhiThue,soNguoiToiDa,maKieu_Thue,maLoaiDichVu,
+                tieuChuanPhong,moTaTienNghiKhac,dienTichHoBoi,soTang,dichVuMienPhiDiKem);
+        facilityService.insertFacility(newFacility);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/service/create.jsp");
         dispatcher.forward(request, response);
     }
 
     private void updateFacility(HttpServletRequest request, HttpServletResponse response)
-        throws SQLException, IOException, ServletException {
-        int maKhachHang = Integer.parseInt(request.getParameter("ma_khach_hang"));
-        int maLoaiKhach = Integer.parseInt(request.getParameter("ma_loai_khach"));
-        String hoTen = request.getParameter("ho_ten");
-        String ngaySinh = request.getParameter("ngay_sinh");
-        int gioiTinh = Integer.parseInt(request.getParameter("gioi_tinh"));
-        int soCMND = Integer.parseInt(request.getParameter("so_cmnd"));
-        int soDienThoai = Integer.parseInt(request.getParameter("so_dien_thoai"));
-        String email = request.getParameter("email");
-        String diaChi = request.getParameter("dia_chi");
-        Customer book = new Customer(maKhachHang, maLoaiKhach, hoTen, ngaySinh, gioiTinh, soCMND, soDienThoai, email, diaChi);
+            throws SQLException, IOException, ServletException {
+        int maDichVu = Integer.parseInt(request.getParameter("ma_dich_vu"));
+        String tenDichVu = request.getParameter("ten_dich_vu");
+        int dienTich = Integer.parseInt(request.getParameter("dien_tich"));
+        double chiPhiThue =Double.parseDouble(request.getParameter("chi_phi_thue"));
+        int soNguoiToiDa = Integer.parseInt(request.getParameter("so_nguoi_toi_da"));
+        int maKieu_Thue = Integer.parseInt(request.getParameter("ma_kieu_thue"));
+        int maLoaiDichVu = Integer.parseInt(request.getParameter("ma_loai_dich_vu"));
+        String tieuChuanPhong = request.getParameter("tieu_chuan_phong");
+        String moTaTienNghiKhac = request.getParameter("mo_ta_tien_nghi_khac");
+        double dienTichHoBoi =Double.parseDouble(request.getParameter("dien_tich_ho_boi"));
+        int soTang = Integer.parseInt(request.getParameter("so_tang"));
+        String dichVuMienPhiDiKem = request.getParameter("dich_vu_mien_phi_di_kem");
+        Facility book = new Facility(maDichVu,tenDichVu,dienTich, chiPhiThue,soNguoiToiDa,maKieu_Thue,maLoaiDichVu,
+                tieuChuanPhong,moTaTienNghiKhac,dienTichHoBoi,soTang,dichVuMienPhiDiKem);
 
-        customerService.updateCustomer(book);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/edit.jsp");
+        facilityService.updateFacility(book);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/service/edit.jsp");
         dispatcher.forward(request, response);
     }
-    }
-
-
-
-
-
-
 }
+
+
+
+
+
+
+

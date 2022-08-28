@@ -10,8 +10,10 @@
 
 <html>
 <head>
-    <title>Service Manager Application</title>
-    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <title>Facility Manager Application</title>
+    <link rel="stylesheet" href="../../bootstrap520/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../datatables/css/dataTables.bootstrap5.min.css">
+
 </head>
 <body>
 <div class="container-fluid">
@@ -23,22 +25,23 @@
                 </a>
             </span>
         </div>
-        <div class="col-5 header text-center fs-1">Service</div>
+        <div class="col-5 header text-center fs-1">Facility</div>
         <div class="col-4 header position-relative"><span class="position-absolute top-50 start-50 translate-middle">Ngô Đình Nhật Tuấn</span>
         </div>
     </div>
 
     <div class="row">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light   ">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="col-4"></div>
             <div class="col-5">
                 <div class="container-fluid d-flex justify-content-center ">
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle float-end" href="#"  role="button"
+                                <a class="nav-link dropdown-toggle float-end" href="#" role="button"
                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    <span class="float-end "><a class="text-decoration-none" href="/furama">Home</a></span>
+                                    <span class="float-end "><a class="text-decoration-none"
+                                                                href="/furama">Home</a></span>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="#">Action</a></li>
@@ -51,9 +54,10 @@
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle float-end" href="#"  role="button"
+                                <a class="nav-link dropdown-toggle float-end" href="#" role="button"
                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    <span class="float-end"><a class="text-decoration-none" href="/employee">Employee</a></span>
+                                    <span class="float-end"><a class="text-decoration-none"
+                                                               href="/employee">Employee</a></span>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="#">Action</a></li>
@@ -66,9 +70,10 @@
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle float-end" href="#"  role="button"
+                                <a class="nav-link dropdown-toggle float-end" href="#" role="button"
                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    <span class="float-end"><a class="text-decoration-none" href="/customer">Customer</a></span>
+                                    <span class="float-end"><a class="text-decoration-none"
+                                                               href="/customer">Customer</a></span>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="#">Action</a></li>
@@ -98,7 +103,8 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle float-end" href="#" role="button"
                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    <span class="float-end"><a class="text-decoration-none" href="/contract">Contract</a></span>
+                                    <span class="float-end"><a class="text-decoration-none"
+                                                               href="/contract">Contract</a></span>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="#">Action</a></li>
@@ -127,260 +133,68 @@
     <div class="row">
     <span>
         <!-- Button to Open the Modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAdd">
-                Add
+            <button type="button" class="btn btn bg-success">
+                <a class="text-decoration-underline text-white" href="facility?action=create">Add</a>
             </button>
     </span>
 
 
-        <div class="table-responsive">
-            <table class="table">
+        <div class="col-lg-12">
+            <table id="tableFacility" class="table table-striped table-bordered" style="width:100%">
+                <thead>
                 <tr>
-                    <th>id</th>
-                    <th>Name</th>
-                    <th>Address</th>
-                    <th>PhoneNumber</th>
-                    <th>Type</th>
+                    <th>ma_dich_vu</th>
+                    <th>ten_dich_vu</th>
+                    <th>dien_tich</th>
+                    <th>chi_phi_thue</th>
+                    <th>so_nguoi_toi_da</th>
+                    <th>ma_kieu_thue</th>
+                    <th>ma_loai_dich_vu</th>
+                    <th>tieu_chuan_phong</th>
+                    <th>mo_ta_tien_nghi_khac</th>
+                    <th>dien_tich_ho_boi</th>
+                    <th>so_tang</th>
+                    <th>dich_vu_mien_phi_di_kem</th>
+                    <th>Actions1</th>
+                    <th>Actions2</th>
                 </tr>
-                <tr>
-                    <td>id</td>
-                    <td>Name</td>
-                    <td>Address</td>
-                    <td>PhoneNumber</td>
+                </thead>
+                <tbody>
+                <c:forEach var="customer" items="${listFacility}">
+                    <tr>
+                        <td><c:out value="${customer.maDichVu}"/></td>
+                        <td><c:out value="${customer.tenDichVu}"/></td>
+                        <td><c:out value="${customer.dienTich}"/></td>
+                        <td><c:out value="${customer.chiPhiThue}"/></td>
+                        <td><c:out value="${customer.soNguoiToiDa}"/></td>
+                        <td><c:out value="${customer.maKieuThue}"/></td>
+                        <td><c:out value="${customer.maLoaiDichVu}"/></td>
+                        <td><c:out value="${customer.tieuChuanPhong}"/></td>
+                        <td><c:out value="${customer.moTaTienNghiKhac}"/></td>
+                        <td><c:out value="${customer.dienTichHoBoi}"/></td>
+                        <td><c:out value="${customer.soTang}"/></td>
+                        <td><c:out value="${customer.dichVuMienPhiDiKem}"/></td>
 
-                    <td>
-                        <!-- Button to Open the Modal -->
-                        <button type="button" class="btn btn-primary bg-success" data-bs-toggle="modal"
-                                data-bs-target="#modalView">
-                            View
-                        </button>
-                    </td>
-
-                    <td>
-                        <!-- Button to Open the Modal -->
-                        <button type="button" class="btn btn-primary bg-danger" data-bs-toggle="modal"
-                                data-bs-target="#modalEdit">
-                            Edit
-                        </button>
-                    </td>
-                    <td>
-                        <!-- Button to Open the Modal -->
-                        <button type="button" class="btn btn-primary bg-warning" data-bs-toggle="modal"
-                                data-bs-target="#modalDelete">
-                            Delete
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>id</td>
-                    <td>Name</td>
-                    <td>Address</td>
-                    <td>PhoneNumber</td>
-                    <td>
-                        <!-- Button to Open the Modal -->
-                        <button type="button" class="btn btn-primary bg-success" data-bs-toggle="modal"
-                                data-bs-target="#modalView">
-                            View
-                        </button>
-                    </td>
-
-                    <td>
-                        <!-- Button to Open the Modal -->
-                        <button type="button" class="btn btn-primary bg-danger" data-bs-toggle="modal"
-                                data-bs-target="#modalEdit">
-                            Edit
-                        </button>
-                    </td>
-                    <td>
-                        <!-- Button to Open the Modal -->
-                        <button type="button" class="btn btn-primary bg-warning" data-bs-toggle="modal"
-                                data-bs-target="#modalDelete">
-                            Delete
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>id</td>
-                    <td>Name</td>
-                    <td>Address</td>
-                    <td>PhoneNumber</td>
-
-                    <td>
-                        <!-- Button to Open the Modal -->
-                        <button type="button" class="btn btn-primary bg-success" data-bs-toggle="modal"
-                                data-bs-target="#modalView">
-                            View
-                        </button>
-                    </td>
-
-                    <td>
-                        <!-- Button to Open the Modal -->
-                        <button type="button" class="btn btn-primary bg-danger" data-bs-toggle="modal"
-                                data-bs-target="#modalEdit">
-                            Edit
-                        </button>
-                    </td>
-                    <td>
-                        <!-- Button to Open the Modal -->
-                        <button type="button" class="btn btn-primary bg-warning" data-bs-toggle="modal"
-                                data-bs-target="#modalDelete">
-                            Delete
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>id</td>
-                    <td>Name</td>
-                    <td>Address</td>
-                    <td>PhoneNumber</td>
-                    <td>
-                        <!-- Button to Open the Modal -->
-                        <button type="button" class="btn btn-primary bg-success" data-bs-toggle="modal"
-                                data-bs-target="#modalView">
-                            View
-                        </button>
-                    </td>
-
-                    <td>
-                        <!-- Button to Open the Modal -->
-                        <button type="button" class="btn btn-primary bg-danger" data-bs-toggle="modal"
-                                data-bs-target="#modalEdit">
-                            Edit
-                        </button>
-                    </td>
-                    <td>
-                        <!-- Button to Open the Modal -->
-                        <button type="button" class="btn btn-primary bg-warning" data-bs-toggle="modal"
-                                data-bs-target="#modalDelete">
-                            Delete
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>id</td>
-                    <td>Name</td>
-                    <td>Address</td>
-                    <td>PhoneNumber</td>
-
-                    <td>
-                        <!-- Button to Open the Modal -->
-                        <button type="button" class="btn btn-primary bg-success" data-bs-toggle="modal"
-                                data-bs-target="#modalView">
-                            View
-                        </button>
-                    </td>
-
-                    <td>
-                        <!-- Button to Open the Modal -->
-                        <button type="button" class="btn btn-primary bg-danger" data-bs-toggle="modal"
-                                data-bs-target="#modalEdit">
-                            Edit
-                        </button>
-                    </td>
-                    <td>
-                        <!-- Button to Open the Modal -->
-                        <button type="button" class="btn btn-primary bg-warning" data-bs-toggle="modal"
-                                data-bs-target="#modalDelete">
-                            Delete
-                        </button>
-                    </td>
-                </tr>
+                        <td>
+                            <a href="/facility?action=edit&ma_dich_vu=${customer.maDichVu}">
+                                <button class="btn bg-warning text-white">
+                                    Edit
+                                </button>
+                            </a>
+                        </td>
+                        <td>
+                            <%--<a href="/customer?action=delete&ma_khach_hang=${customer.maKhachHang}">--%>
+                            <!-- Button to Open the Modal -->
+                            <button type="button" class="btn btn-primary bg-danger" data-bs-toggle="modal"
+                                    data-bs-target="#modalDelete"
+                                    onclick="setIdToFormDelete('${customer.maDichVu}')">
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+                </c:forEach>
+                </tbody>
             </table>
-        </div>
-    </div>
-</div>
-<%--    <h1>Service Manager</h1>--%>
-<%--    <h2>--%>
-<%--        <a href="furama?action=users">List All Service</a>--%>
-<%--    </h2>--%>
-<%--    <h2>--%>
-<%--        <a href="/furama?action=sort"> Sort By Name</a>--%>
-<%--    </h2>--%>
-<%--    <h2>--%>
-<%--        <a href="/furama?action=create"> Add New Service</a>--%>
-<%--    </h2>--%>
-<%--    <form action="/furama">--%>
-<%--        <input type="text" name="country">--%>
-<%--        <input type="submit" name="action" value="findByCountry">--%>
-<%--    </form>--%>
-
-<%--    <form action="/furama">--%>
-<%--        <input type="text" name="name">--%>
-<%--        <input type="submit" name="action" value="findByName">--%>
-<%--    </form>--%>
-
-<%--<div align="center">--%>
-<%--    <table border="1" cellpadding="5">--%>
-<%--        <caption>--%>
-<%--            <h2>Danh sách Service</h2>--%>
-<%--        </caption>--%>
-<%--        <tr>--%>
-<%--            <th>ID</th>--%>
-<%--            <th>NAME</th>--%>
-<%--            <th>EMAIL</th>--%>
-<%--            <th>COUNTRY</th>--%>
-<%--            <th>ACTIONS</th>--%>
-<%--        </tr>--%>
-<%--        <c:forEach items="${listService}" var="service">--%>
-<%--            <tr>--%>
-<%--                <td>${service.id}</td>--%>
-<%--                <td>${service.name}</td>--%>
-<%--                <td>${service.email}</td>--%>
-<%--                <td>${service.country}</td>--%>
-<%--                <td>--%>
-<%--                    <a href="/furama?action=edit&id=${service.id}"> Edit</a>--%>
-<%--                    <a href="/furama?action=delete&id=${service.id}">Delete</a>--%>
-<%--                </td>--%>
-<%--            </tr>--%>
-<%--        </c:forEach>--%>
-<%--    </table>--%>
-<%--</div>--%>
-
-<div class="modal" id="modalView">
-    <div class="modal-dialog">
-        <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Modal Heading</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-                do you want View this list?
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<!-- The modalEdit -->
-<div class="modal" id="modalEdit">
-    <div class="modal-dialog">
-        <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Modal Heading</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-                do you want Edit this line?
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-            </div>
-
         </div>
     </div>
 </div>
@@ -404,37 +218,41 @@
             <!-- Modal footer -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="submitFormDelete()">Delete</button>
             </div>
 
         </div>
     </div>
 </div>
 
-<!-- The modalAdd -->
-<div class="modal" id="modalAdd">
-    <div class="modal-dialog">
-        <div class="modal-content">
 
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Modal Heading</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
+<script src="../../jquery/jquery-3.5.1.min.js"></script>
+<script src="../../datatables/js/jquery.dataTables.min.js"></script>
+<script src="../../bootstrap520/js/bootstrap.min.js"></script>
 
-            <!-- Modal body -->
-            <div class="modal-body">
-                do you want add?
-            </div>
 
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-            </div>
+<form action="/facility" id="formDelete">
+    <input type="hidden" name="action" value="delete">
+    <input type="hidden" id="ma_dich_vu" name="ma_dich_vu">
+</form>
 
-        </div>
-    </div>
-</div>
-
-<script src="/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#tableFacility').dataTable(
+            {
+                "dom": 'lrtip',
+                "lengthChange": false,
+                "pageLength": 5
+            }
+        );
+    });
+    function setIdToFormDelete(maDichVu) {
+        document.getElementById("ma_dich_vu").value = maDichVu;
+    }
+    function submitFormDelete() {
+        document.getElementById("formDelete").submit();
+    }
+</script>
 </body>
+
 </html>

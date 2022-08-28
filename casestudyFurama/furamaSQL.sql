@@ -27,11 +27,11 @@ so_dien_thoai varchar(45),
 email varchar(45),
 dia_chi varchar(45),
 ma_vi_tri int,
-FOREIGN KEY (ma_vi_tri) REFERENCES vi_tri(ma_vi_tri),
+FOREIGN KEY (ma_vi_tri) REFERENCES vi_tri(ma_vi_tri)on delete set null,
 ma_trinh_do int,
-FOREIGN KEY (ma_trinh_do) REFERENCES trinh_do(ma_trinh_do),
+FOREIGN KEY (ma_trinh_do) REFERENCES trinh_do(ma_trinh_do)on delete set null,
 ma_bo_phan int,
-FOREIGN KEY (ma_bo_phan) REFERENCES bo_phan(ma_bo_phan)
+FOREIGN KEY (ma_bo_phan) REFERENCES bo_phan(ma_bo_phan)on delete set null
 );
 
 create table loai_khach(

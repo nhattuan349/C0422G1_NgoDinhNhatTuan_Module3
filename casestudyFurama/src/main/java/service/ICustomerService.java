@@ -18,4 +18,5 @@ public interface ICustomerService {
     boolean updateCustomer(Customer customer) throws SQLException;
 
     List<CustomerType> selectCustomerType();
+
 }

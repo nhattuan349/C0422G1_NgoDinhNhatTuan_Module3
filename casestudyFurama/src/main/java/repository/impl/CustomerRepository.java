@@ -60,8 +60,8 @@ public class CustomerRepository implements ICustomerRepository {
             preparedStatement.setString(2, customer.getHoTen());
             preparedStatement.setString(3, customer.getNgaySinh());
             preparedStatement.setInt(4, customer.getGioiTinh());
-            preparedStatement.setInt(5, customer.getSoCMND());
-            preparedStatement.setInt(6, customer.getSoDienThoai());
+            preparedStatement.setString(5, customer.getSoCMND());
+            preparedStatement.setString(6, customer.getSoDienThoai());
             preparedStatement.setString(7, customer.getEmail());
             preparedStatement.setString(8, customer.getDiaChi());
             System.out.println(preparedStatement);
@@ -89,8 +89,8 @@ public class CustomerRepository implements ICustomerRepository {
                 String hoTen = rs.getString("ho_ten");
                 String ngaySinh = rs.getString("ngay_sinh");
                 int gioiTinh = rs.getInt("gioi_tinh");
-                int soCMND = rs.getInt("so_cmnd");
-                int soDienThoai = rs.getInt("so_dien_thoai");
+                String soCMND = rs.getString("so_cmnd");
+                String soDienThoai = rs.getString("so_dien_thoai");
                 String email = rs.getString("email");
                 String diaChi = rs.getString("dia_chi");
                 customer = new Customer(maLoaiKhach,hoTen,ngaySinh,gioiTinh,soCMND,soDienThoai,email,diaChi);
@@ -121,8 +121,8 @@ public class CustomerRepository implements ICustomerRepository {
                 String hoTen = rs.getString("ho_ten");
                 String ngaySinh = rs.getString("ngay_sinh");
                 int gioiTinh = rs.getInt("gioi_tinh");
-                int soCMND = rs.getInt("so_cmnd");
-                int soDienThoai = rs.getInt("so_dien_thoai");
+                String soCMND = rs.getString("so_cmnd");
+                String soDienThoai = rs.getString("so_dien_thoai");
                 String email = rs.getString("email");
                 String diaChi = rs.getString("dia_chi");
                 customers.add(new Customer(maKhachHang,maLoaiKhach,hoTen,ngaySinh,gioiTinh,soCMND,soDienThoai,email,diaChi));
@@ -176,8 +176,8 @@ public class CustomerRepository implements ICustomerRepository {
             statement.setString(2, customer.getHoTen());
             statement.setString(3, customer.getNgaySinh());
             statement.setInt(4, customer.getGioiTinh());
-            statement.setInt(5, customer.getSoCMND());
-            statement.setInt(6, customer.getSoDienThoai());
+            statement.setString(5, customer.getSoCMND());
+            statement.setString(6, customer.getSoDienThoai());
             statement.setString(7, customer.getEmail());
             statement.setString(8, customer.getDiaChi());
             statement.setInt(9, customer.getMaKhachHang());

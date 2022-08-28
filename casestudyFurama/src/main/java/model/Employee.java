@@ -5,18 +5,31 @@ public class Employee {
     private String hoTen;
     private String ngaySinh;
     private String  soCMND;
-    private String luong;
+    private Double luong;
     private int soDienThoai;
     private String email;
-    private String address;
-    private String maViTri;
-    private String maTrinhDo;
-    private String maBoPhan;
+    private String diaChi;
+    private int maViTri;
+    private int maTrinhDo;
+    private int maBoPhan;
 
     public Employee() {
     }
 
-    public Employee(int maNhanVien, String hoTen, String ngaySinh, String soCMND, String luong, int soDienThoai, String email, String address, String maViTri, String maTrinhDo, String maBoPhan) {
+    public Employee(String hoTen, String ngaySinh, String soCMND, Double luong, int soDienThoai, String email, String diaChi, int maViTri, int maTrinhDo, int maBoPhan) {
+        this.hoTen = hoTen;
+        this.ngaySinh = ngaySinh;
+        this.soCMND = soCMND;
+        this.luong = luong;
+        this.soDienThoai = soDienThoai;
+        this.email = email;
+        this.diaChi = diaChi;
+        this.maViTri = maViTri;
+        this.maTrinhDo = maTrinhDo;
+        this.maBoPhan = maBoPhan;
+    }
+
+    public Employee(int maNhanVien, String hoTen, String ngaySinh, String soCMND, Double luong, int soDienThoai, String email, String diaChi, int maViTri, int maTrinhDo, int maBoPhan) {
         this.maNhanVien = maNhanVien;
         this.hoTen = hoTen;
         this.ngaySinh = ngaySinh;
@@ -24,7 +37,7 @@ public class Employee {
         this.luong = luong;
         this.soDienThoai = soDienThoai;
         this.email = email;
-        this.address = address;
+        this.diaChi = diaChi;
         this.maViTri = maViTri;
         this.maTrinhDo = maTrinhDo;
         this.maBoPhan = maBoPhan;
@@ -62,11 +75,11 @@ public class Employee {
         this.soCMND = soCMND;
     }
 
-    public String getLuong() {
+    public Double getLuong() {
         return luong;
     }
 
-    public void setLuong(String luong) {
+    public void setLuong(Double luong) {
         this.luong = luong;
     }
 
@@ -86,35 +99,35 @@ public class Employee {
         this.email = email;
     }
 
-    public String getAddress() {
-        return address;
+    public String getDiaChi() {
+        return diaChi;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setDiaChi(String diaChi) {
+        this.diaChi = diaChi;
     }
 
-    public String getMaViTri() {
+    public int getMaViTri() {
         return maViTri;
     }
 
-    public void setMaViTri(String maViTri) {
+    public void setMaViTri(int maViTri) {
         this.maViTri = maViTri;
     }
 
-    public String getMaTrinhDo() {
+    public int getMaTrinhDo() {
         return maTrinhDo;
     }
 
-    public void setMaTrinhDo(String maTrinhDo) {
+    public void setMaTrinhDo(int maTrinhDo) {
         this.maTrinhDo = maTrinhDo;
     }
 
-    public String getMaBoPhan() {
+    public int getMaBoPhan() {
         return maBoPhan;
     }
 
-    public void setMaBoPhan(String maBoPhan) {
+    public void setMaBoPhan(int maBoPhan) {
         this.maBoPhan = maBoPhan;
     }
 }

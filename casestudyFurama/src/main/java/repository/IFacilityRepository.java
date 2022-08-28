@@ -7,7 +7,7 @@ import model.Facility;
 import java.sql.SQLException;
 import java.util.List;
 
-public interface IServiceRepository {
+public interface IFacilityRepository {
     void insertFacility(Facility facility) throws SQLException;
 
     Facility selectFacility(int id);
